@@ -1,0 +1,27 @@
+from tkinter import*
+root = Tk()
+root.title("Entrada")
+root.geometry("300x400")
+root.resizable(0,0)
+nombre=StringVar()
+apellido=StringVar()
+saludo=StringVar()
+nombre.set("Escribe aqui tu nombre")
+apellido.set("Escribe aqui tu nombre")
+def saludar():
+    saludo.set("hola "+nombre.get()+" "+apellido.get())
+
+entrada3=Entry(root,bd=5,textvariable=saludo,state="disable")
+entrada3.place(x=70, y=221)
+
+etiqueta1=Label(root, text="Escribe aqui tu nombre",bd=4,bg="red",font=("Curier 10"))
+etiqueta1.place(x=10, y=10)
+entrada1=Entry(root,textvariable= nombre,bd=5)
+entrada1.place(x=170, y=10)
+etiqueta2=Label(root, text="Escribe aqui tu nombre",bd=4, bg="red",font=("Curier 10"))
+etiqueta2.place(x=10, y=40)
+entrada2=Entry(root,textvariable=apellido,bd=5)
+entrada2.place(x=170, y=40)
+boton=Button(root,text="saludar ahora", command=saludar,bd=5,bg="red")
+boton.place(x=10,y=100)
+root.mainloop()
